@@ -1,4 +1,4 @@
-package applications.aoc2023
+package application.aoc2023
 
 import model.Calibrator
 import model.types.QuestionPart

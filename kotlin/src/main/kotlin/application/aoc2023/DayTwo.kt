@@ -31,6 +31,6 @@ class DayTwo {
 
 
 fun main() {
-    DayTwo().solvePartA()
-    DayTwo().solvePartB()
+    DayThree().solvePartA()
+    DayThree().solvePartB()
 }

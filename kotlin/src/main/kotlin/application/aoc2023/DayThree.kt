@@ -15,13 +15,13 @@ class DayThree {
     private val schematic = createSchematic()
 
     fun solvePartA() {
-        val enginePartTotal = calculateEnginePartTotal(schematic)
+        val enginePartTotal = calculateEnginePartTotal()
 
         println("Part A: $enginePartTotal")
     }
 
     fun solvePartB() {
-        val gearRatioTotal = calculateGearRatioTotal(schematic)
+        val gearRatioTotal = calculateGearRatioTotal()
 
         println("Part B: $gearRatioTotal")
     }
@@ -99,7 +99,7 @@ class DayThree {
         }
     }
 
-    private fun calculateEnginePartTotal(schematic: EngineSchematic): Int {
+    private fun calculateEnginePartTotal(): Int {
         var enginePartTotal = 0
         for (enginePart in schematic.getElementsBySchematicPart(ENGINE_PART)) {
             enginePartTotal += enginePart.getValue().toInt()
@@ -108,7 +108,7 @@ class DayThree {
         return enginePartTotal
     }
 
-    private fun calculateGearRatioTotal(schematic: EngineSchematic): Int {
+    private fun calculateGearRatioTotal(): Int {
         var gearRatioTotal = 0
 
         val asterisks = schematic.getElementsBySchematicPart(SYMBOL)

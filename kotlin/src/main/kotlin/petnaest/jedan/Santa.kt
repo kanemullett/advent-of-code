@@ -7,12 +7,12 @@ class Santa() {
         return currentFloor
     }
 
-    fun changeFloor(movementInstruction: String) {
+    fun changeFloor(movementInstruction: Char) {
         when (movementInstruction) {
-            "(" -> {
+            '(' -> {
                 currentFloor += 1
             }
-            ")" -> {
+            ')' -> {
                 currentFloor -= 1
             }
             else -> {

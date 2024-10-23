@@ -1,6 +1,7 @@
 package petnaest.jedan
 
 import AdventUtils
+import petnaest.jedan.model.Santa
 
 class PartOne {
 

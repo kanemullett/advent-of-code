@@ -1,4 +1,4 @@
-package petnaest.jedan
+package petnaest.jedan.model
 
 class Santa() {
     private var currentFloor: Int = 0

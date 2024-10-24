@@ -20,6 +20,7 @@ class PartOne {
 }
 
 class PartTwo {
+
     companion object {
         private val puzzleInput: String = AdventUtils.readInput("petnaest", "jedan")[0]
 

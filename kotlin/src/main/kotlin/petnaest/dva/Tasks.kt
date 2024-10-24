@@ -18,3 +18,19 @@ class PartOne {
         }
     }
 }
+
+class PartTwo {
+
+    companion object {
+        private val puzzleInput: List<String> = AdventUtils.readInput("petnaest", "dva")
+
+        @JvmStatic
+        fun main(args: Array<String>) {
+            val totalRibbon: Int = puzzleInput.map { line -> Cuboid(line) }
+                .map(Cuboid::ribbonLength)
+                .sum()
+
+            println(totalRibbon)
+        }
+    }
+}

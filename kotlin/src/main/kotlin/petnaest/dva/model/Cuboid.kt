@@ -12,6 +12,10 @@ class Cuboid(dimensions: String) {
         width = splitDimensions[2]
     }
 
+    private fun volume(): Int {
+        return length * width * height
+    }
+
     private fun surfaceArea(): Int {
         return 2 * (length * width + length * height + width * height)
     }
@@ -22,5 +26,13 @@ class Cuboid(dimensions: String) {
 
     fun requiredWrappingPaper(): Int {
         return surfaceArea() + slack()
+    }
+
+    private fun smallestFacePerimeter(): Int {
+        return 2 * intArrayOf(length, height, width).sorted().take(2).sum()
+    }
+
+    fun ribbonLength(): Int {
+        return volume() + smallestFacePerimeter()
     }
 }

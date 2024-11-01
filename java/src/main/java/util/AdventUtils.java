@@ -17,7 +17,7 @@ public class AdventUtils {
     }
 
     public static List<String> parseInput(Integer year, Integer day) {
-        final File file = new File(String.format("./src/main/resources/aoc-%s/day-%s.txt", year, day));
+        final File file = new File(String.format("./src/main/resources/aoc%s/day%s.txt", year, day));
         final List<String> lines = new ArrayList<>();
 
         try (Scanner scanner = new Scanner(file)) {

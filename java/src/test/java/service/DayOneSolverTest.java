@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -22,7 +23,7 @@ class DayOneSolverTest {
     @Test
     void shouldReturnTotalValueAsString() {
         // Given
-        when(calibrationService.calculateCalibrationValueTotal(any()))
+        when(calibrationService.calculateCalibrationValueTotal(any(), eq(false)))
             .thenReturn(12345);
 
         // When

@@ -18,11 +18,13 @@ public class DayOneSolver implements DaySolver {
     public String taskOne() {
         final CalibrationDocument calibrationDocument = CalibrationDocument.of(inputLines);
 
-        return String.valueOf(calibrationService.calculateCalibrationValueTotal(calibrationDocument));
+        return String.valueOf(calibrationService.calculateCalibrationValueTotal(calibrationDocument, false));
     }
 
     @Override
     public String taskTwo() {
-        return "";
+        final CalibrationDocument calibrationDocument = CalibrationDocument.of(inputLines);
+
+        return String.valueOf(calibrationService.calculateCalibrationValueTotal(calibrationDocument, true));
     }
 }

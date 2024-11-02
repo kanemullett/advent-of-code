@@ -9,10 +9,10 @@ public class CalibrationService {
         // Empty constructor for dependency injection
     }
 
-    public Integer calculateCalibrationValueTotal(CalibrationDocument calibrationDocument) {
+    public Integer calculateCalibrationValueTotal(CalibrationDocument calibrationDocument, boolean textNumbersCountAsIntegers) {
 
         return calibrationDocument.getCalibrationLines().stream()
-            .map(new CalibrationLineToValueFunction())
+            .map(new CalibrationLineToValueFunction(textNumbersCountAsIntegers))
             .mapToInt(Integer::intValue)
             .sum();
     }

@@ -1,4 +1,4 @@
-package service;
+package challenges.aoc2023.day1.service;
 
 import challenges.aoc2023.day1.model.CalibrationDocument;
 import challenges.aoc2023.day1.service.CalibrationService;

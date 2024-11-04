@@ -1,7 +1,7 @@
 package challenges.aoc2023.day2.service;
 
 import challenges.aoc2023.day2.model.BagGame;
-import challenges.aoc2023.day2.model.BallReveal;
+import challenges.aoc2023.day2.model.CubeReveal;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +12,33 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class BagGameServiceTest {
     private BagGameService bagGameService;
 
+    private static final List<BagGame> BAG_GAMES = List.of(
+        BagGame.of(1, List.of(
+            CubeReveal.of(4, 0, 3),
+            CubeReveal.of(1, 2, 6),
+            CubeReveal.of(0, 2, 0)
+        )),
+        BagGame.of(2, List.of(
+            CubeReveal.of(0, 2, 1),
+            CubeReveal.of(1, 3, 4),
+            CubeReveal.of(0, 1, 1)
+        )),
+        BagGame.of(3, List.of(
+            CubeReveal.of(20, 8, 6),
+            CubeReveal.of(4, 13, 5),
+            CubeReveal.of(1, 5, 0)
+        )),
+        BagGame.of(4, List.of(
+            CubeReveal.of(3, 1, 6),
+            CubeReveal.of(6, 3, 0),
+            CubeReveal.of(14, 3, 15)
+        )),
+        BagGame.of(5, List.of(
+            CubeReveal.of(6, 3, 1),
+            CubeReveal.of(1, 2, 2)
+        ))
+    );
+
     @BeforeEach
     void setUp() {
         bagGameService = new BagGameService();
@@ -19,38 +46,19 @@ class BagGameServiceTest {
 
     @Test
     void shouldCalculateIdTotalOfPossibleGames() {
-        // Given
-        final List<BagGame> bagGames = List.of(
-            BagGame.of(1, List.of(
-                BallReveal.of(4, 0, 3),
-                BallReveal.of(1, 2, 6),
-                BallReveal.of(0, 2, 0)
-            )),
-            BagGame.of(2, List.of(
-                BallReveal.of(0, 2, 1),
-                BallReveal.of(1, 3, 4),
-                BallReveal.of(0, 1, 1)
-            )),
-            BagGame.of(3, List.of(
-                BallReveal.of(20, 8, 6),
-                BallReveal.of(4, 13, 5),
-                BallReveal.of(1, 5, 0)
-            )),
-            BagGame.of(4, List.of(
-                BallReveal.of(3, 1, 6),
-                BallReveal.of(6, 3, 0),
-                BallReveal.of(14, 3, 15)
-            )),
-            BagGame.of(5, List.of(
-                BallReveal.of(6, 3, 1),
-                BallReveal.of(1, 2, 2)
-            ))
-        );
-
         // When
-        final String totalId = bagGameService.calculateTotalOfPossibleIds(bagGames);
+        final String totalId = bagGameService.calculateTotalOfPossibleIds(BAG_GAMES);
 
         // Then
         assertEquals("8", totalId);
+    }
+
+    @Test
+    void shouldCalculateTotalPowerOfGames() {
+        // When
+        final String totalCubePowers = bagGameService.calculateTotalOfCubePowers(BAG_GAMES);
+
+        // Then
+        assertEquals("2286", totalCubePowers);
     }
 }

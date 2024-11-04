@@ -19,17 +19,17 @@ class BagGameTest {
         assertEquals(1, bagGame.getId());
         assertEquals(3, bagGame.getReveals().size());
 
-        final BallReveal reveal1 = bagGame.getReveals().get(0);
+        final CubeReveal reveal1 = bagGame.getReveals().get(0);
         assertEquals(4, reveal1.getRed());
         assertEquals(0, reveal1.getGreen());
         assertEquals(23, reveal1.getBlue());
 
-        final BallReveal reveal2 = bagGame.getReveals().get(1);
+        final CubeReveal reveal2 = bagGame.getReveals().get(1);
         assertEquals(1, reveal2.getRed());
         assertEquals(2, reveal2.getGreen());
         assertEquals(6, reveal2.getBlue());
 
-        final BallReveal reveal3 = bagGame.getReveals().get(2);
+        final CubeReveal reveal3 = bagGame.getReveals().get(2);
         assertEquals(0, reveal3.getRed());
         assertEquals(2, reveal3.getGreen());
         assertEquals(0, reveal3.getBlue());

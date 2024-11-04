@@ -5,7 +5,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class BallRevealTest {
+class CubeRevealTest {
 
     @ParameterizedTest
     @CsvSource({
@@ -13,17 +13,17 @@ public class BallRevealTest {
         "'1 red, 2 green, 6 blue', '1, 2, 6'",
         "'2 green', '0, 2, 0'"
     })
-    void shouldBuildBallRevealObject(String revealString, String expected) {
+    void shouldBuildCubeRevealObject(String revealString, String expected) {
         // Given
         final String[] expectedColours = expected.split(", ");
 
         // When
-        final BallReveal ballReveal = BallReveal.of(revealString);
+        final CubeReveal cubeReveal = CubeReveal.of(revealString);
 
         // Then
-        assertEquals(ImmutableBallReveal.class, ballReveal.getClass());
-        assertEquals(Integer.parseInt(expectedColours[0]), ballReveal.getRed());
-        assertEquals(Integer.parseInt(expectedColours[1]), ballReveal.getGreen());
-        assertEquals(Integer.parseInt(expectedColours[2]), ballReveal.getBlue());
+        assertEquals(ImmutableCubeReveal.class, cubeReveal.getClass());
+        assertEquals(Integer.parseInt(expectedColours[0]), cubeReveal.getRed());
+        assertEquals(Integer.parseInt(expectedColours[1]), cubeReveal.getGreen());
+        assertEquals(Integer.parseInt(expectedColours[2]), cubeReveal.getBlue());
     }
 }

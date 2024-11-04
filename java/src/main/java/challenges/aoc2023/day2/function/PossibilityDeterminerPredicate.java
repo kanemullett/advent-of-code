@@ -26,11 +26,6 @@ public class PossibilityDeterminerPredicate implements Predicate<BagGame> {
     }
 
     private Integer getMaximumShownForColour(BagGame game, BallColour colour) {
-        Integer hello = game.getReveals().stream()
-            .mapToInt(ballReveal -> ballReveal.getNumberOfBallsByColour(colour))
-            .max()
-            .orElseThrow();
-
         return game.getReveals().stream()
             .mapToInt(ballReveal -> ballReveal.getNumberOfBallsByColour(colour))
             .max()

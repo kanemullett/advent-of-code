@@ -23,6 +23,8 @@ public class DayOneSolver implements DaySolver {
 
     @Override
     public String taskTwo() {
-        return null;
+        final LocationList locationList = LocationList.of(inputLines);
+        
+        return String.valueOf(listService.calculateTotalSimilarityScore(locationList));
     }
 }

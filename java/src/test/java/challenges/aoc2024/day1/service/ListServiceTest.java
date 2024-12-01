@@ -12,13 +12,13 @@ import challenges.aoc2024.day1.model.LocationList;
 class ListServiceTest {
     private ListService listService;
 
-        @BeforeEach
-        void setUp() {
-            listService = new ListService();
-        }
+    @BeforeEach
+    void setUp() {
+        listService = new ListService();
+    }
 
     @Test
-    void testCalculateTotalListDistance() {
+    void shouldCalculateTotalListDistance() {
         // Given
         final LocationList locationList = LocationList.of(List.of("3   4", "4   3", "2   5", "1   3", "3   9", "3   3"));
 
@@ -27,5 +27,17 @@ class ListServiceTest {
 
         // Then
         assertEquals(11, totalDistance);
+    }
+
+    @Test
+    void shouldCalculateTotalSimilarityScore() {
+        // Given
+        final LocationList locationList = LocationList.of(List.of("3   4", "4   3", "2   5", "1   3", "3   9", "3   3"));
+
+        // When
+        final Integer totalSimilarityScore = listService.calculateTotalSimilarityScore(locationList);
+
+        // Then
+        assertEquals(31, totalSimilarityScore);
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import challenges.aoc2024.day1.model.LocationList;
+import challenges.aoc2024.day1.model.LocationLists;
 
 class ListServiceTest {
     private ListService listService;
@@ -20,10 +20,10 @@ class ListServiceTest {
     @Test
     void shouldCalculateTotalListDistance() {
         // Given
-        final LocationList locationList = LocationList.of(List.of("3   4", "4   3", "2   5", "1   3", "3   9", "3   3"));
+        final LocationLists locationLists = LocationLists.of(List.of("3   4", "4   3", "2   5", "1   3", "3   9", "3   3"));
 
         // When
-        final Integer totalDistance = listService.calculateTotalListDistance(locationList);
+        final Integer totalDistance = listService.calculateTotalListDistance(locationLists);
 
         // Then
         assertEquals(11, totalDistance);
@@ -32,10 +32,10 @@ class ListServiceTest {
     @Test
     void shouldCalculateTotalSimilarityScore() {
         // Given
-        final LocationList locationList = LocationList.of(List.of("3   4", "4   3", "2   5", "1   3", "3   9", "3   3"));
+        final LocationLists locationLists = LocationLists.of(List.of("3   4", "4   3", "2   5", "1   3", "3   9", "3   3"));
 
         // When
-        final Integer totalSimilarityScore = listService.calculateTotalSimilarityScore(locationList);
+        final Integer totalSimilarityScore = listService.calculateTotalSimilarityScore(locationLists);
 
         // Then
         assertEquals(31, totalSimilarityScore);

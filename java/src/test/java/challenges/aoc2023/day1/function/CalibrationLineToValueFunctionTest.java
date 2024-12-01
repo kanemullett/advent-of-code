@@ -1,6 +1,5 @@
 package challenges.aoc2023.day1.function;
 
-import challenges.aoc2023.day1.function.CalibrationLineToValueFunction;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 

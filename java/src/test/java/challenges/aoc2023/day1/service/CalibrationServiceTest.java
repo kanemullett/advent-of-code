@@ -1,7 +1,6 @@
 package challenges.aoc2023.day1.service;
 
 import challenges.aoc2023.day1.model.CalibrationDocument;
-import challenges.aoc2023.day1.service.CalibrationService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

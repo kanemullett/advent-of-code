@@ -6,25 +6,47 @@ import challenges.aoc2024.day2.model.ReactorReport;
 import service.DaySolver;
 import util.AdventUtils;
 
+/**
+ * Solver class for the tasks of Day 2 of the 2024 Advent of Code.
+ */
 public class DayTwoSolver implements DaySolver {
     private final List<String> inputLines = AdventUtils.parseInput(2024, 2);
     private final ReactorReportService reactorReportService;
 
+    /**
+     * Solver class for the tasks of Day 2 of the 2024 Advent of Code.
+     * 
+     * @param listService The list service used to perform list calculations.
+     */
     public DayTwoSolver(ReactorReportService reactorReportService) {
         this.reactorReportService = reactorReportService;
     }
 
+    /**
+     * Solve the first task of Day 2 of the 2024 Advent of Code.
+     * 
+     * @return The solution of the first task.
+     */
     @Override
     public String taskOne() {
         final List<ReactorReport> reactorReports = inputLines.stream()
             .map(ReactorReport::of)
             .toList();
 
-        return String.valueOf(reactorReportService.calculateTotalSafeReports(reactorReports));
+        return String.valueOf(reactorReportService.calculateTotalSafeReports(reactorReports, false));
     }
 
+    /**
+     * Solve the second task of Day 2 of the 2024 Advent of Code.
+     * 
+     * @return The solution of the second task.
+     */
     @Override
     public String taskTwo() {
-        return null;
+        final List<ReactorReport> reactorReports = inputLines.stream()
+            .map(ReactorReport::of)
+            .toList();
+
+        return String.valueOf(reactorReportService.calculateTotalSafeReports(reactorReports, true));
     }
 }

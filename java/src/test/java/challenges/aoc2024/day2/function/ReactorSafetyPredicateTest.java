@@ -18,10 +18,31 @@ class ReactorSafetyPredicateTest {
         "8 6 4 4 1, false",
         "1 3 6 7 9, true"
     })
-    void shouldDetermineIfReactorIsSafe(String inputReport, boolean expectedSafetyOutcome) {
+    void shouldDetermineIfReactorIsSafeWithNoDampenerActive(String inputReport, boolean expectedSafetyOutcome) {
         // Given
         final ReactorReport reactorReport = ReactorReport.of(inputReport);
-        final ReactorSafetyPredicate predicate = new ReactorSafetyPredicate();
+        final ReactorSafetyPredicate predicate = new ReactorSafetyPredicate(false);
+
+        // When
+        final boolean isSafe = predicate.test(reactorReport);
+
+        // Then
+        assertEquals(expectedSafetyOutcome, isSafe);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "7 6 4 2 1, true",
+        "1 2 7 8 9, false",
+        "9 7 6 2 1, false",
+        "1 3 2 4 5, true",
+        "8 6 4 4 1, true",
+        "1 3 6 7 9, true"
+    })
+    void shouldDetermineIfReactorIsSafeWithDampenerActive(String inputReport, boolean expectedSafetyOutcome) {
+        // Given
+        final ReactorReport reactorReport = ReactorReport.of(inputReport);
+        final ReactorSafetyPredicate predicate = new ReactorSafetyPredicate(true);
 
         // When
         final boolean isSafe = predicate.test(reactorReport);

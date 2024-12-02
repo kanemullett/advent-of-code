@@ -5,7 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import challenges.aoc2024.day2.model.ReactorReport;
 
@@ -26,12 +27,16 @@ class ReactorReportServiceTest {
         reactorReportService = new ReactorReportService();
     }
 
-    @Test
-    void shouldCalculateTotalSafeReports() {
+    @ParameterizedTest
+    @CsvSource({
+        "false, 2",
+        "true, 4"
+    })
+    void shouldCalculateTotalSafeReports(boolean isProblemDampenerActive, Integer expectedSafeReports) {
         // When
-        final Integer safeReports = reactorReportService.calculateTotalSafeReports(reactorReports);
+        final Integer safeReports = reactorReportService.calculateTotalSafeReports(reactorReports, isProblemDampenerActive);
 
         // Then
-        assertEquals(2, safeReports);
+        assertEquals(expectedSafeReports, safeReports);
     }
 }

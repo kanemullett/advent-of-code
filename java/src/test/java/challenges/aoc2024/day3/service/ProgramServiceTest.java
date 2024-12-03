@@ -3,9 +3,8 @@ package challenges.aoc2024.day3.service;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import challenges.aoc2024.day3.model.ComputerMemory;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 class ProgramServiceTest {
     private ProgramService programService;
@@ -15,15 +14,16 @@ class ProgramServiceTest {
         programService = new ProgramService();
     }
 
-    @Test
-    void shouldCalculateTotalOfMultiplicationInstructions() {
-        // Given
-        final ComputerMemory memory = ComputerMemory.of("xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))");
-
+    @ParameterizedTest
+    @CsvSource({
+        "false, 161",
+        "true, 48"
+    })
+    void shouldCalculateTotalOfMultiplicationInstructions(boolean conditionalsIntact, Integer expectedTotal) {
         // When
-        final Integer total = programService.calculateTotalOfMultiplicationInstructions(memory);
+        final Integer total = programService.calculateTotalOfMultiplicationInstructions("xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))", conditionalsIntact);
 
         // Then
-        assertEquals(161, total);
+        assertEquals(expectedTotal, total);
     }
 }

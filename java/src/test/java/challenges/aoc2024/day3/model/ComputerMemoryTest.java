@@ -9,10 +9,10 @@ class ComputerMemoryTest {
     @Test
     void shouldBuildComputerMemoryObjectFromString() {
         // When
-        final ComputerMemory memory = ComputerMemory.of("xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))");
+        final ComputerMemorySection memory = ComputerMemorySection.of("xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))");
 
         // Then
-        assertEquals(ImmutableComputerMemory.class, memory.getClass());
+        assertEquals(ImmutableComputerMemorySection.class, memory.getClass());
 
         assertEquals(4, memory.getInstructions().size());
         assertEquals(MultiplicationInstruction.of(2, 4), memory.getInstructions().get(0));

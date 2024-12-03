@@ -2,7 +2,6 @@ package challenges.aoc2024.day3.service;
 
 import java.util.List;
 
-import challenges.aoc2024.day3.model.ComputerMemory;
 import service.DaySolver;
 import util.AdventUtils;
 
@@ -16,16 +15,15 @@ public class DayThreeSolver implements DaySolver {
 
     @Override
     public String taskOne() {
-        
-        return String.valueOf(inputLines.stream()
-            .map(ComputerMemory::of)
-            .map(memory -> programService.calculateTotalOfMultiplicationInstructions(memory))
-            .mapToInt(Integer::intValue)
-            .sum());
+        final String rawMemory = String.join("", inputLines);
+
+        return String.valueOf(programService.calculateTotalOfMultiplicationInstructions(rawMemory, false));
     }
 
     @Override
     public String taskTwo() {
-        return null;
+        final String rawMemory = String.join("", inputLines);
+
+        return String.valueOf(programService.calculateTotalOfMultiplicationInstructions(rawMemory, true));
     }
 }

@@ -8,14 +8,14 @@ import org.immutables.value.Value.Immutable;
 import challenges.aoc2024.day3.util.DayThreeConstants;
 
 @Immutable
-public interface ComputerMemory {
+public interface ComputerMemorySection {
     
     List<MultiplicationInstruction> getInstructions();
 
-    static ComputerMemory of(String rawMemory) {
+    static ComputerMemorySection of(String rawMemory) {
         final Matcher matcher = DayThreeConstants.MULTIPLICATION_INSTRUCTION_PATTERN.matcher(rawMemory);
         
-        return ImmutableComputerMemory.builder()
+        return ImmutableComputerMemorySection.builder()
             .instructions(matcher.results()
                 .map(match -> match.group(0))
                 .map(MultiplicationInstruction::of)

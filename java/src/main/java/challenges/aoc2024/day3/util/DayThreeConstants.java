@@ -9,4 +9,5 @@ public class DayThreeConstants {
     }
 
     public static final Pattern MULTIPLICATION_INSTRUCTION_PATTERN = Pattern.compile("mul\\((-?\\d+),(-?\\d+)\\)");
+    public static final Pattern DO_DONT_SECTION_PATTERN = Pattern.compile("(?<=do\\(\\))(.*?)(?=don't\\(\\))");
 }

@@ -16,7 +16,7 @@ public class DayTwoSolver implements DaySolver {
     /**
      * Solver class for the tasks of Day 2 of the 2024 Advent of Code.
      * 
-     * @param listService The list service used to perform list calculations.
+     * @param reactorReportService The reactor report service used to perform reactor safety operations.
      */
     public DayTwoSolver(ReactorReportService reactorReportService) {
         this.reactorReportService = reactorReportService;

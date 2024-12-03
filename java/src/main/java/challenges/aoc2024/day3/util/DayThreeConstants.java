@@ -2,6 +2,9 @@ package challenges.aoc2024.day3.util;
 
 import java.util.regex.Pattern;
 
+/**
+ * Class for storing common constants.
+ */
 public class DayThreeConstants {
     
     private DayThreeConstants() {

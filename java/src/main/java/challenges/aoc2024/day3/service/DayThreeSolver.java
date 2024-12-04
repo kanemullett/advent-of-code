@@ -13,7 +13,7 @@ public class DayThreeSolver implements DaySolver {
     private final ProgramService programService;
 
     /**
-     * Solver class for the tasks of Day 2 of the 2024 Advent of Code.
+     * Solver class for the tasks of Day 3 of the 2024 Advent of Code.
      * 
      * @param programService The program service used to extract information from corrupted data.
      */

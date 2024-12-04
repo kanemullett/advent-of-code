@@ -41,4 +41,29 @@ class WordsearchServiceTest {
         // Then
         assertEquals(18, xmasCount);
     }
+
+    @Test
+    void testCountInstancesOfMasX() {
+        // Given
+        final List<String> wordsearchRows = List.of(
+            "MMMSXXMASM",
+            "MSAMXMSMSA",
+            "AMXSXMAAMM",
+            "MSAMASMSMX",
+            "XMASAMXAMM",
+            "XXAMMXXAMA",
+            "SMSMSASXSS",
+            "SAXAMASAAA",
+            "MAMMMXMMMM",
+            "MXMXAXMASX"
+        );
+
+        final Wordsearch wordsearch = Wordsearch.of(wordsearchRows);
+
+        // When
+        final Integer xmasCount = wordsearchService.countInstancesOfMasX(wordsearch);
+
+        // Then
+        assertEquals(9, xmasCount);
+    }
 }

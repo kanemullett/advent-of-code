@@ -17,7 +17,7 @@ public class CorrectlyOrderedPagesPredicate implements Predicate<ProductionUpdat
     public boolean test(ProductionUpdate productionUpdate) {
         return pageOrderingRules.stream()
             .filter(rule -> !satisfiesRule(productionUpdate, rule))
-            .toList().size() == 0;
+            .toList().isEmpty();
     }
 
     private boolean satisfiesRule(ProductionUpdate update, PageOrderingRule rule) {

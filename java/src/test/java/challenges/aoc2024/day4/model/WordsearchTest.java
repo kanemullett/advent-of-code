@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import model.CoordinatePair;
+
 class WordsearchTest {
     
     @Test

@@ -6,9 +6,9 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import challenges.aoc2024.day4.model.CoordinatePair;
 import challenges.aoc2024.day4.model.Wordsearch;
 import challenges.aoc2024.day4.model.WordsearchLetter;
+import model.CoordinatePair;
 
 /**
  * Service for solving wordsearch challenges.

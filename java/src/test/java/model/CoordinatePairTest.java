@@ -1,4 +1,4 @@
-package challenges.aoc2024.day4.model;
+package model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

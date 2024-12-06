@@ -2,6 +2,8 @@ package challenges.aoc2024.day4.model;
 
 import org.immutables.value.Value.Immutable;
 
+import model.CoordinatePair;
+
 /**
  * WordsearchLetter object containing a letter from the wordsearch and its position.
  */

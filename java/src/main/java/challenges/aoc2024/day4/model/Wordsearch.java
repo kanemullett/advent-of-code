@@ -5,6 +5,8 @@ import java.util.stream.IntStream;
 
 import org.immutables.value.Value.Immutable;
 
+import model.CoordinatePair;
+
 /**
  * Wordsearch object containing all letters.
  */

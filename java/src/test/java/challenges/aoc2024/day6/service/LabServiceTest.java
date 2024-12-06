@@ -39,4 +39,27 @@ class LabServiceTest {
         // Then
         assertEquals(41, count);
     }
+
+    @Test
+    void shouldCountObstructionPlacementPositions() {
+        // Given
+        final LabMap labMap = LabMap.of(List.of(
+            "....#.....",
+            ".........#",
+            "..........",
+            "..#.......",
+            ".......#..",
+            "..........",
+            ".#..^.....",
+            "........#.",
+            "#.........",
+            "......#..."
+        ));
+
+        // When
+        final Integer count = labService.countObstructionPlacementPositions(labMap);
+
+        // Then
+        assertEquals(6, count);
+    }
 }

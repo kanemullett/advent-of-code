@@ -24,7 +24,31 @@ class CalibrationValuePredicateTest {
     void shouldDetermineIfEquationsCanProduceTestValue(String equationString, boolean expectedOutcome) {
         // Given
         final CalibrationEquation equation = CalibrationEquation.of(equationString);
-        final CalibrationValuePredicate predicate = new CalibrationValuePredicate();
+        final CalibrationValuePredicate predicate = new CalibrationValuePredicate(false);
+
+        // When
+        final boolean actualOutcome = predicate.test(equation);
+
+        // Then
+        assertEquals(expectedOutcome, actualOutcome);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "190: 10 19, true",
+        "3267: 81 40 27, true",
+        "83: 17 5, false",
+        "156: 15 6, true",
+        "7290: 6 8 6 15, true",
+        "161011: 16 10 13, false",
+        "192: 17 8 14, true",
+        "21037: 9 7 18 13, false",
+        "292: 11 6 16 20, true"
+    })
+    void shouldDetermineIfEquationsIncludingConcatenationCanProduceTestValue(String equationString, boolean expectedOutcome) {
+        // Given
+        final CalibrationEquation equation = CalibrationEquation.of(equationString);
+        final CalibrationValuePredicate predicate = new CalibrationValuePredicate(true);
 
         // When
         final boolean actualOutcome = predicate.test(equation);

@@ -13,7 +13,7 @@ class ExpressionBuilderFunctionTest {
     void shouldBuildExpressions() {
         // Given
         final List<Long> numbers = List.of(1L, 2L, 3L);
-        final ExpressionBuilderFunction expressionBuilderFunction = new ExpressionBuilderFunction();
+        final ExpressionBuilderFunction expressionBuilderFunction = new ExpressionBuilderFunction(false);
 
         // When
         final List<String> expressions = expressionBuilderFunction.apply(numbers);
@@ -24,5 +24,27 @@ class ExpressionBuilderFunctionTest {
         assertTrue(expressions.contains("1+2*3"));
         assertTrue(expressions.contains("1*2+3"));
         assertTrue(expressions.contains("1*2*3"));
+    }
+
+    @Test
+    void shouldBuildExpressionsWithConcatenation() {
+        // Given
+        final List<Long> numbers = List.of(1L, 2L, 3L);
+        final ExpressionBuilderFunction expressionBuilderFunction = new ExpressionBuilderFunction(true);
+
+        // When
+        final List<String> expressions = expressionBuilderFunction.apply(numbers);
+
+        // Then
+        assertEquals(9, expressions.size());
+        assertTrue(expressions.contains("1+2+3"));
+        assertTrue(expressions.contains("1+2*3"));
+        assertTrue(expressions.contains("1+2||3"));
+        assertTrue(expressions.contains("1*2+3"));
+        assertTrue(expressions.contains("1||2+3"));
+        assertTrue(expressions.contains("1*2*3"));
+        assertTrue(expressions.contains("1*2||3"));
+        assertTrue(expressions.contains("1||2*3"));
+        assertTrue(expressions.contains("1||2||3"));
     }
 }

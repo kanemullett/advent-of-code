@@ -33,6 +33,8 @@ class CityMapTest {
 
         // Then
         assertEquals(ImmutableCityMap.class, city.getClass());
+        assertEquals(12, city.getHeight());
+        assertEquals(12, city.getWidth());
 
         final List<Antenna> antennas = city.getAntennas();
         assertEquals(7, antennas.size());

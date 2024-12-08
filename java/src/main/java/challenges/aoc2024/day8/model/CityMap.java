@@ -9,12 +9,18 @@ import model.CoordinatePair;
 
 @Immutable
 public interface CityMap {
+
+    Integer getHeight();
+
+    Integer getWidth();
     
     List<Antenna> getAntennas();
 
     static CityMap of(List<String> cityRows) {
 
         return ImmutableCityMap.builder()
+            .height(cityRows.size())
+            .width(cityRows.get(0).split("").length)
             .antennas(IntStream.range(0, cityRows.size())
             .mapToObj(rowIndex -> IntStream.range(0, cityRows.get(rowIndex).split("").length)
                 .filter(colIndex -> !".".equals(cityRows.get(rowIndex).split("")[colIndex]))

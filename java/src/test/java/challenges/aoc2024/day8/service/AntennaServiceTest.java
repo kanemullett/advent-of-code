@@ -5,7 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import challenges.aoc2024.day8.model.CityMap;
 
@@ -17,8 +18,12 @@ class AntennaServiceTest {
         antennaService = new AntennaService();
     }
 
-    @Test
-    void shouldCountUniqueAntinodePositions() {
+    @ParameterizedTest
+    @CsvSource({
+        "false, 14",
+        "true, 34"
+    })
+    void shouldCountUniqueAntinodePositions(boolean applyResonantHarmonics, Integer expectedCount) {
         // Given
         final List<String> rows = List.of(
             "............",
@@ -38,9 +43,9 @@ class AntennaServiceTest {
         final CityMap cityMap = CityMap.of(rows);
 
         // When
-        final Integer count = antennaService.countUniqueAntinodePositions(cityMap);
+        final Integer count = antennaService.countUniqueAntinodePositions(cityMap, applyResonantHarmonics);
 
         // Then
-        assertEquals(14, count);
+        assertEquals(expectedCount, count);
     }
 }

@@ -5,7 +5,7 @@ import service.DaySolver
 import util.AdventUtils
 
 class DayOneSolver(listService: ListService) extends DaySolver {
-  private val inputLines: List[String] = AdventUtils().parseInput(2024, 1)
+  private val inputLines: List[String] = AdventUtils.parseInput(2024, 1)
 
   override def taskOne(): String = {
     val locationLists: LocationLists = LocationLists.of(inputLines)

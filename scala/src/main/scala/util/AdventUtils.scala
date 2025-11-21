@@ -2,7 +2,7 @@ package util
 
 import scala.io.Source
 
-class AdventUtils {
+object AdventUtils {
 
   def parseInput(year: Int, day: Int): List[String] = {
     val path: String = f"./src/main/resources/aoc$year/day$day.txt"

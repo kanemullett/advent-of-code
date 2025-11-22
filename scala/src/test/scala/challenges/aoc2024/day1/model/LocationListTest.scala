@@ -14,11 +14,11 @@ class LocationListTest extends AnyFunSuite {
     // Then
     assert(6 == locationLists.linePairs.size)
 
-    assert(ListLinePair.of(1, 3) == locationLists.linePairs.head)
-    assert(ListLinePair.of(2, 3) == locationLists.linePairs(1))
-    assert(ListLinePair.of(3, 3) == locationLists.linePairs(2))
-    assert(ListLinePair.of(3, 4) == locationLists.linePairs(3))
-    assert(ListLinePair.of(3, 5) == locationLists.linePairs(4))
-    assert(ListLinePair.of(4, 9) == locationLists.linePairs(5))
+    assert(ListLinePair(1, 3) == locationLists.linePairs.head)
+    assert(ListLinePair(2, 3) == locationLists.linePairs(1))
+    assert(ListLinePair(3, 3) == locationLists.linePairs(2))
+    assert(ListLinePair(3, 4) == locationLists.linePairs(3))
+    assert(ListLinePair(3, 5) == locationLists.linePairs(4))
+    assert(ListLinePair(4, 9) == locationLists.linePairs(5))
   }
 }

@@ -6,7 +6,7 @@ class ListLinePairTest extends AnyFunSuite {
 
   test("should build ListLinePair object from left and right values") {
     // When
-    val listLinePair: ListLinePair = ListLinePair.of(23, 47)
+    val listLinePair: ListLinePair = ListLinePair(23, 47)
 
     // Then
     assert(listLinePair.isInstanceOf[ListLinePair])

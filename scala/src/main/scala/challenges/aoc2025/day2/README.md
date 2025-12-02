@@ -39,7 +39,7 @@ Adding up all the invalid IDs in this example produces `1227775554`.
 
 **_What do you get if you add up all of the invalid IDs?_**
 
-### Part Two
+### Task Two
 
 The clerk quickly discovers that there are still invalid IDs in the ranges in your list. Maybe the young Elf was doing other silly patterns as well?
 

@@ -7,8 +7,6 @@ class DialRotationFunction extends ((Int, DialRotation) => Int) {
 
   override def apply(currentPosition: Int, rotationInstruction: DialRotation): Int = {
 
-    println(rotationInstruction)
-
     val result: Int =
       if rotationInstruction.direction == RotationDirection.Left then
         currentPosition - rotationInstruction.distance

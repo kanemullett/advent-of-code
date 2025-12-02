@@ -11,8 +11,13 @@ class DayOneSolver(safeService: SafeService) extends DaySolver {
     val rotations: List[DialRotation] = inputLines
       .map(DialRotation.of)
     
-    safeService.decipherPassword(rotations).toString
+    safeService.decipherPassword(rotations, false).toString
   }
 
-  override def taskTwo(): String = ???
+  override def taskTwo(): String = {
+    val rotations: List[DialRotation] = inputLines
+      .map(DialRotation.of)
+
+    safeService.decipherPassword(rotations, true).toString
+  }
 }

@@ -5,11 +5,11 @@ import challenges.aoc2025.day2.model.IdRange
 
 class IdValidationService {
 
-  def calculateInvalidIdTotal(idRanges: List[IdRange]): Long = {
+  def calculateInvalidIdTotal(idRanges: List[IdRange], exactlyTwice: Boolean): Long = {
 
     idRanges
       .map(range => (range.firstId to range.lastId)
-        .filterNot(new IdValidationPredicate())
+        .filterNot(new IdValidationPredicate(exactlyTwice))
         .sum)
       .sum
   }

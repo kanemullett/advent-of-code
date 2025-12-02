@@ -12,8 +12,14 @@ class DayTwoSolver(validationService: IdValidationService) extends DaySolver {
       .map(IdRange.of)
       .toList
     
-    validationService.calculateInvalidIdTotal(ranges).toString
+    validationService.calculateInvalidIdTotal(ranges, true).toString
   }
 
-  override def taskTwo(): String = ???
+  override def taskTwo(): String = {
+    val ranges: List[IdRange] = inputLine.split(",")
+      .map(IdRange.of)
+      .toList
+
+    validationService.calculateInvalidIdTotal(ranges, false).toString
+  }
 }

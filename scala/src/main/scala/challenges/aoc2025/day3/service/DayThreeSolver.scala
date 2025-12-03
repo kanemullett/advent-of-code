@@ -12,8 +12,14 @@ class DayThreeSolver(batteryService: BatteryService) extends DaySolver {
     val banks: List[BatteryBank] = inputLines
       .map(BatteryBank.of)
     
-    batteryService.calculateTotalJoltage(banks).toString
+    batteryService.calculateTotalJoltage(banks, 2).toString
   }
 
-  override def taskTwo(): String = ???
+  override def taskTwo(): String = {
+
+    val banks: List[BatteryBank] = inputLines
+      .map(BatteryBank.of)
+
+    batteryService.calculateTotalJoltage(banks, 12).toString
+  }
 }

@@ -1,13 +1,13 @@
 package challenges.aoc2025.day3.model
 
-case class BatteryBank(batteries: List[Int])
+case class BatteryBank(batteries: List[Long])
 
 object BatteryBank {
   
   def of(bankString: String): BatteryBank = {
     
-    val batteries: List[Int] = bankString.split("")
-      .map(_.toInt)
+    val batteries: List[Long] = bankString.split("")
+      .map(_.toLong)
       .toList
     
     BatteryBank(batteries)

@@ -12,10 +12,5 @@ class IngredientIdRangeTest extends AnyFunSuite {
     assert(ingredientIdRange.isInstanceOf[IngredientIdRange])
     assert(ingredientIdRange.firstId == 3L)
     assert(ingredientIdRange.lastId == 5L)
-
-    val values: List[Long] = ingredientIdRange.values
-    assert(3L == values.head)
-    assert(4L == values(1))
-    assert(5L == values(2))
   }
 }

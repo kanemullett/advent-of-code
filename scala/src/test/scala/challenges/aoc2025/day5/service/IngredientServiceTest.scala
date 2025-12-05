@@ -29,4 +29,22 @@ class IngredientServiceTest extends AnyFunSuite with BeforeAndAfter {
     // Then
     assert(freshIngredientCount == 3)
   }
+
+  test("should count total of fresh ingredients") {
+    // Given
+    val freshRanges: List[IngredientIdRange] = List(
+      IngredientIdRange(3, 5),
+      IngredientIdRange(10, 14),
+      IngredientIdRange(16, 20),
+      IngredientIdRange(12, 18)
+    )
+
+    val ingredientIds: List[Long] = List(1, 5, 8, 11, 17, 32)
+
+    // When
+    val freshIngredientCount: Long = ingredientService.countTotalFreshIngredients(freshRanges)
+
+    // Then
+    assert(freshIngredientCount == 14)
+  }
 }

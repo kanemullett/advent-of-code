@@ -1,4 +1,4 @@
-# December 3nd, 2025
+# December 3rd, 2025
 ### Task One
 
 You descend a short staircase, enter the surprisingly vast lobby, and are quickly cleared by the security checkpoint. When you get to the main elevators, however, you discover that each one has a red light above it: they're all **_offline_**.

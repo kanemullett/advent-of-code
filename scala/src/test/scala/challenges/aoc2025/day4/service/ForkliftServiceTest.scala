@@ -34,4 +34,27 @@ class ForkliftServiceTest extends AnyFunSuite with BeforeAndAfter {
     // Then
     assert(accessible == 13)
   }
+
+  test("should calculate number of removable rolls of paper") {
+    // Given
+    val rowStrings: List[String] = List(
+      "..@@.@@@@.",
+      "@@@.@.@.@@",
+      "@@@@@.@.@@",
+      "@.@@@@..@.",
+      "@@.@@@@.@@",
+      ".@@@@@@@.@",
+      ".@.@.@.@@@",
+      "@.@@@.@@@@",
+      ".@@@@@@@@.",
+      "@.@.@@@.@."
+    )
+    val warehouse: Warehouse = Warehouse.of(rowStrings)
+
+    // When
+    val accessible: Int = forkliftService.calculateTotalRemovablePaperRolls(warehouse)
+
+    // Then
+    assert(accessible == 43)
+  }
 }

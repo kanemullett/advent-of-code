@@ -13,5 +13,9 @@ class DayFourSolver(forkliftService: ForkliftService) extends DaySolver {
     forkliftService.calculateTotalAccessiblePaperRolls(warehouse).toString
   }
 
-  override def taskTwo(): String = ???
+  override def taskTwo(): String = {
+    val warehouse: Warehouse = Warehouse.of(inputLines)
+
+    forkliftService.calculateTotalRemovablePaperRolls(warehouse).toString
+  }
 }
